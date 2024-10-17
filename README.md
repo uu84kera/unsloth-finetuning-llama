@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Step 1: Download Data
+### Step 1: Download Model
 Run the `download.py` script to download the necessary files:
 
 ```bash
