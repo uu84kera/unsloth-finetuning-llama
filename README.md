@@ -22,11 +22,7 @@ pip install -r requirements.txt
 ## Usage
 
 ### Step 1: Download Model
-Run the `download.py` script to download the necessary files:
 
-```bash
-python download.py
-```
 
 ### Step 2: Process Dataset
 Prepare the dataset for training by running:
