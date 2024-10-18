@@ -7,10 +7,9 @@ This repository contains scripts to process datasets, download necessary files, 
 ## Contents
 
 1. `process_dataset.py`: Prepares and processes the dataset to be used for training and evaluation.
-2. `download.py`: Downloads required data or model files from specified URLs.
-3. `finetune-llama.py`: Script to fine-tune a LLaMA model using the processed dataset.
-4. `plot_loss.py`: Plots the training loss after each epoch to visualize model convergence.
-5. `evaluate.py`: Evaluates the trained model using a set of pre-defined metrics.
+2. `finetune-llama.py`: Script to fine-tune a LLaMA model using the processed dataset.
+3. `plot_loss.py`: Plots the training loss after each epoch to visualize model convergence.
+4. `evaluate.py`: Evaluates the trained model using a set of pre-defined metrics.
 
 ## Installation
 
@@ -62,9 +61,3 @@ python evaluate.py
 - PyTorch
 - Matplotlib
 - Other dependencies listed in `requirements.txt`
-
-## Contributing
-If you'd like to contribute to this project, please fork the repository and submit a pull request.
-
-## License
-This project is licensed under the MIT License. See `LICENSE` for more details.
