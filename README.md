@@ -1,28 +1,38 @@
-# unsloth-finetuning-llama
+# Project Finetuning Llama
 
 ## Overview
 
-This repository contains scripts to process datasets, download necessary files, fine-tune a LLaMA model, plot training loss, and evaluate model performance. The project is designed to facilitate the process of fine-tuning language models, tracking training progress, and assessing the final results.
+This folder contains scripts to process datasets, fine-tune a LLaMA model, plot training loss, evaluate model performance and inference. 
+The project is designed to facilitate the process of fine-tuning language models, tracking training progress, and assessing the final results.
 
 ## Contents
 
-1. `process_dataset.py`: Prepares and processes the dataset to be used for training and evaluation.
+1. `llama-process_dataset.py`: Prepares and processes the dataset to be used for training and evaluation.
 2. `finetune-llama.py`: Script to fine-tune a LLaMA model using the processed dataset.
 3. `plot_loss.py`: Plots the training loss after each epoch to visualize model convergence.
-4. `evaluate.py`: Evaluates the trained model using a set of pre-defined metrics.
+4. `llama-evaluate.py`: Evaluates the trained model using ROUGE and BLEU.
+5. `inference.py`: Performs inference using the trained model.
+
 
 ## Installation
 
-To use this project, you need to have Python installed. You also need to install the necessary dependencies:
+To use this project, you need to have Python-3.10 installed. You also need to install the necessary dependencies using Anaconda or Miniconda:
 
 ```bash
-pip install -r requirements.txt
+# create the virtual environment
+conda env create -f environment.yml
+# activate the virtual environment
+conda activate llm
 ```
 
 ## Usage
 
 ### Step 1: Download Model
-
+```bash
+# use mirror to download the pretrained model
+export HF_ENDPOINT=https://hf-mirror.com
+huggingface-cli download --resume-download shenzhi-wang/Llama3.1-8B-Chinese-Chat --local-dir chinese-model
+```
 
 ### Step 2: Process Dataset
 Prepare the dataset for training by running:
@@ -46,14 +56,15 @@ python plot_loss.py
 ```
 
 ### Step 5: Evaluate the Model
-Finally, evaluate the model's performance using:
+Finally, evaluate the model's performance using rouge and bleu:
 
 ```bash
-python evaluate.py
+python llama-evaluate.py
 ```
 
-## Requirements
-- Python 3.8+
-- PyTorch
-- Matplotlib
-- Other dependencies listed in `requirements.txt`
+### Step 6: Inference the Model
+Finally, inference the model using val_fold_1.json:
+
+```bash
+python inference.py
+```
